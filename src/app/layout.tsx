@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Sidebar from "@/src/components/sidebar";
 
 export const metadata: Metadata = {
   title: "lol note",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        <Sidebar />
+        {children}
+      </body>
     </html>
   );
 }
