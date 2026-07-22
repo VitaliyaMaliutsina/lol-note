@@ -1,0 +1,46 @@
+.aside {
+  width: 100%;
+  max-width: 300px;
+  background-color: #07111F;
+  height: 100wh;
+  padding: 20px;
+
+  .profile {
+    margin-bottom: 40px;
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      column-gap: 10px;
+      img {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    .listItem {
+      display: flex;
+      column-gap: 5px;
+      padding: 15px;
+      border-radius: 7px;
+      transition: background-color 300ms ease-in, outline-color 300ms ease-in;
+
+      a {
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: #1B2347;
+        outline: 1px solid #7C3AED;
+      }
+    }
+  }
+}
