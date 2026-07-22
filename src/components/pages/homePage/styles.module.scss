@@ -1,5 +1,3 @@
-@use "../../../lib/assets/styles/styles.scss" as *;
-
 .container {
-  background-color: $color-pink;
+  background-color: var(--color-bg-surface);
 }

@@ -1,0 +1,44 @@
+:root {
+  /*raw*/
+  --purple-300: #d8b4fe;
+  --purple-500: #7c3aed;
+
+  --blue-100: #f3f6fb;
+  --blue-200: #9aa6b8;
+  --blue-600: #2a3a55;
+  --blue-700: #203048;
+  --blue-800: #0a1526;
+
+  --yellow-600: #d69a3d;
+  --yellow-800: #2a2115;
+
+  --red-400: #ef5350;
+  --pink-800: #271820;
+
+  --green-400: #36b46f;
+  --green-800: #10261f;
+
+  /*semantic*/
+  --color-bg-page: var(--blue-800);
+  --color-bg-surface: var(--blue-700);
+
+  --color-action-primary: var(--purple-500);
+  --color-action-secondary: var(--blue-800);
+
+  --color-border-primary: var(--purple-500);
+  --color-border-secondary: var(--blue-600);
+
+  --color-text-primary: var(--blue-100);
+  --color-text-secondary: var(--blue-200);
+
+  --color-warning: var(--yellow-600);
+  --color-warning-bg: var(--yellow-800);
+
+  --color-danger: var(--red-400);
+  --color-danger-bg: var(--pink-800);
+
+  --color-success: var(--green-400);
+  --color-success-bg: var(--green-800);
+
+  --color-focus: var(--purple-500);
+}

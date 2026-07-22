@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "@/lib/assets/styles/tokens/colors.css";
 import "./globals.css";
 import Sidebar from "@/src/components/sidebar";
 

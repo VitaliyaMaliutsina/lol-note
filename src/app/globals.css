@@ -1,21 +1,4 @@
-:root {
-  --font-cyan: #00a5a5;
-  --font-blue: #00148a;
-  --font-grey: #999999;
-  --white: #ffffff;
-  --light-teal: #e8f7f8;
-  --pink: #d2268a;
-  --light-grey: #efeff2;
-  --grey: #9da3af;
-  --red: #fe4732;
-}
-
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
 }
 
 html {
@@ -24,12 +7,12 @@ html {
 }
 
 body {
-  background: var(--grey);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
   font-family: Inter, sans-serif;
   min-height: 100vh;
-  max-width: 1440px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 * {
@@ -62,6 +45,11 @@ a:active {
 
 a:hover {
   text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 nav,
