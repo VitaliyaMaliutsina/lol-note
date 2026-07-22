@@ -1,0 +1,11 @@
+@mixin below($device) {
+  @media (width < $device) {
+    @content;
+  }
+}
+
+@mixin above($device) {
+  @media (width >= $device) {
+    @content;
+  }
+}
