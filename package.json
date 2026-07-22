@@ -9,7 +9,15 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "format:check": "prettier . --check",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md,mdx,yml,yaml}": "prettier --write"
   },
   "dependencies": {
     "next": "16.2.11",
@@ -23,6 +31,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.11",
     "eslint-config-prettier": "10.1.8",
+    "husky": "9.1.7",
+    "lint-staged": "17.1.0",
     "prettier": "3.9.6",
     "sass": "^1.101.3",
     "typescript": "^5"
