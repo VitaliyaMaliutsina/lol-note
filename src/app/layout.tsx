@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "@/lib/assets/styles/tokens/colors.css";
 import "./globals.css";
-import Sidebar from "@/src/components/sidebar";
+import Sidebar from "@/components/sidebar";
 
 export const metadata: Metadata = {
   title: "lol note",

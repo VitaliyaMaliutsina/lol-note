@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import { routes } from "@/src/lib/constants/routes";
+import { routes } from "@/lib/constants/routes";
 import Link from "next/link";
 import Image from "next/image";
 import SummonerImg from "../../../public/images/profileAva.jpg";
