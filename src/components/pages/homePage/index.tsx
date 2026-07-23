@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     <>
       <div className={styles.container}></div>
-      <Button variant="primary">Редактировать профиль</Button>
+      <Button variant="primary">редактировать профиль</Button>
     </>
   );
 };
