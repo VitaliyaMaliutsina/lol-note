@@ -1,37 +1,44 @@
+"use client";
+
 import React from "react";
 import styles from "./styles.module.scss";
 import { routes } from "@/lib/constants/routes";
-import Link from "next/link";
-import Image from "next/image";
-import SummonerImg from "../../../public/images/profileAva.jpg";
+import LinkButton from "@/components/LinkButton";
+import { usePathname } from "next/navigation";
+import { clsx } from "clsx";
+
 const Sidebar = () => {
+  const pathName = usePathname();
+
+  const renderRoutes = (items: typeof routes) => {
+    return items.map((route) => {
+      const Icon = route.icon;
+      const isActive = pathName === route.href;
+
+      return (
+        <li key={route.id} className={styles.listItem}>
+          <LinkButton
+            variant={isActive ? "primary" : "ghost"}
+            className={styles.linkWrapper}
+            href={route.href}
+          >
+            {<Icon />}
+            {route.title}
+          </LinkButton>
+        </li>
+      );
+    });
+  };
+
+  const topElements = routes.slice(0, 3);
+  const bottomElements = routes.slice(3);
+
   return (
     <aside className={styles.aside}>
-      <div className={styles.profile}>
-        <Link href={"/profile"} className={styles.wrapper}>
-          <Image
-            src={SummonerImg}
-            alt="картинка профиля"
-            width={200}
-            height={200}
-          />
+      <nav className={styles.nav}>
+        <ul className={styles.list}>{renderRoutes(topElements)}</ul>
 
-          <p>
-            Summoner <span>#EUW</span>
-          </p>
-        </Link>
-      </div>
-      <nav>
-        <ul className={styles.list}>
-          {routes.map((route) => {
-            return (
-              <li key={route.id} className={styles.listItem}>
-                <Image src={route.img} alt="" />
-                <Link href={route.href}>{route.title}</Link>
-              </li>
-            );
-          })}
-        </ul>
+        <ul className={clsx(styles.list)}>{renderRoutes(bottomElements)}</ul>
       </nav>
     </aside>
   );

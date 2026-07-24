@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import Link, { LinkProps } from "next/link";
 import { ReactNode } from "react";
 
-type TLinkButtonVariants = "primary" | "secondary" | "outline";
+type TLinkButtonVariants = "primary" | "secondary" | "outline" | "ghost";
 
 type TLinkButtonProps = LinkProps & {
   variant?: TLinkButtonVariants;

@@ -53,3 +53,18 @@
     background-color: var(--color-action-primary);
   }
 }
+
+.ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-text-secondary);
+
+  &:hover {
+    background-color: var(--color-action-hover-primary);
+    color: var(--color-text-primary);
+  }
+
+  &:active {
+    background-color: var(--color-active-primary);
+  }
+}
