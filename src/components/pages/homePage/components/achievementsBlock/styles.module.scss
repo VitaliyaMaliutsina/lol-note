@@ -1,0 +1,59 @@
+.container {
+  max-width: 547px;
+  width: 100%;
+  background-color: #0E171D;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .button {
+    padding: 5px 22px;
+    border-radius: 8px;
+  }
+}
+
+.achievementWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  column-gap: 15px;
+  margin-top: auto;
+  width: 100%;
+
+  .achievement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 123px;
+    width: 100%;
+    .img {
+      width: 100%;
+      height: 123px;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+
+}
