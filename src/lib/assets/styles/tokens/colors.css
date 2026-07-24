@@ -10,8 +10,9 @@
   --blue-200: #9aa6b8;
   --blue-400: #465769;
   --blue-600: #2a3a55;
-  --blue-700: #203048;
-  --blue-800: #0a1526;
+  --blue-700: #152031;
+  --blue-750: #101825;
+  --blue-800: #070e1a;
 
   --yellow-600: #d69a3d;
   --yellow-700: #775720;
@@ -78,5 +79,10 @@
     to top left,
     var(--blue-600) 0%,
     var(--blue-800) 100%
+  );
+  --gradient-surface: linear-gradient(
+    to bottom,
+    var(--blue-700) 0%,
+    var(--blue-750) 100%
   );
 }
