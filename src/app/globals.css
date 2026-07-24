@@ -11,8 +11,10 @@ body {
   color: var(--color-text-primary);
   font-family: Inter, sans-serif;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  column-gap: 20px;
 }
 
 * {

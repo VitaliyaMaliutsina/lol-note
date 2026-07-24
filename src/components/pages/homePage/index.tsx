@@ -1,16 +1,24 @@
 import styles from "./styles.module.scss";
-import Button from "@/components/Button";
-import LinkButton from "@/components/LinkButton";
+import ProfileBlock from "@/components/pages/homePage/components/profileBlock";
+import AchievementsBlock from "@/components/pages/homePage/components/achievementsBlock";
+import FavoriteBlock from "@/components/pages/homePage/components/favoritesBlock";
+import RecentBlock from "./components/recentBlock";
+import AllMatchupsBlock from "@/components/pages/homePage/components/allMatchupsBlock";
 const HomePage = () => {
   return (
-    <>
-      <div className={styles.container}></div>
-      <Button variant="primary">редактировать профиль</Button>
-      <LinkButton variant="outline" href="/login">
-        <span>{">"}</span>
-        показать все
-      </LinkButton>
-    </>
+    <section className={styles.container}>
+      <div className={styles.firstGroup}>
+        <ProfileBlock />
+        <AchievementsBlock />
+      </div>
+
+      <div className={styles.secondGroup}>
+        <RecentBlock />
+        <FavoriteBlock />
+      </div>
+
+      <AllMatchupsBlock />
+    </section>
   );
 };
 
