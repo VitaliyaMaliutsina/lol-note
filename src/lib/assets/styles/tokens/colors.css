@@ -1,21 +1,28 @@
 :root {
   /*raw*/
   --purple-300: #d8b4fe;
+  --purple-400: #9f6bfc;
   --purple-500: #7c3aed;
+  --purple-600: #5c29b6;
+  --purple-700: #3d2079;
 
   --blue-100: #f3f6fb;
   --blue-200: #9aa6b8;
+  --blue-400: #465769;
   --blue-600: #2a3a55;
   --blue-700: #203048;
   --blue-800: #0a1526;
 
   --yellow-600: #d69a3d;
+  --yellow-700: #775720;
   --yellow-800: #2a2115;
 
   --red-400: #ef5350;
+  --pink-600: #7f3188;
   --pink-800: #271820;
 
   --green-400: #36b46f;
+  --green-600: #1f5e3d;
   --green-800: #10261f;
 
   /*semantic*/
@@ -23,10 +30,15 @@
   --color-bg-surface: var(--blue-700);
 
   --color-action-primary: var(--purple-500);
-  --color-action-secondary: var(--blue-800);
+  --color-action-secondary: var(--blue-700);
 
-  --color-border-primary: var(--purple-500);
-  --color-border-secondary: var(--blue-600);
+  --color-action-hover-primary: var(--purple-600);
+  --color-active-primary: var(--purple-700);
+  --color-action-hover-secondary: var(--blue-600);
+  --color-active-secondary: var(--blue-400);
+
+  --color-border-primary: var(--purple-400);
+  --color-border-secondary: var(--blue-400);
 
   --color-text-primary: var(--blue-100);
   --color-text-secondary: var(--blue-200);
@@ -41,4 +53,30 @@
   --color-success-bg: var(--green-800);
 
   --color-focus: var(--purple-500);
+
+  --gradient-profile: linear-gradient(
+    to top left,
+    var(--green-600) 0%,
+    var(--blue-800) 100%
+  );
+  --gradient-achievements: linear-gradient(
+    to top left,
+    var(--purple-700) 0%,
+    var(--blue-800) 100%
+  );
+  --gradient-favorites: linear-gradient(
+    to top left,
+    var(--yellow-700) 0%,
+    var(--yellow-800) 100%
+  );
+  --gradient-recent-matchups: linear-gradient(
+    to top left,
+    var(--pink-600) 0%,
+    var(--blue-800) 100%
+  );
+  --gradient-all-matchups: linear-gradient(
+    to top left,
+    var(--blue-600) 0%,
+    var(--blue-800) 100%
+  );
 }
