@@ -1,0 +1,21 @@
+{
+  "short_name": "Lol Note",
+  "name": "Lol Note",
+  "description": "Personal League of Legends matchup notes.",
+  "icons": [
+    {
+      "src": "/images/PWA/logo-200.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/PWA/logo-400.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000",
+  "background_color": "#111111"
+}
