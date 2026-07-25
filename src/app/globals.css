@@ -12,7 +12,7 @@ body {
   overflow: hidden;
   background-color: var(--color-bg-page);
   color: var(--color-text-primary);
-  font-family: Inter, sans-serif;
+  font-family: var(--font-app), sans-serif;
 }
 
 .app-content {
