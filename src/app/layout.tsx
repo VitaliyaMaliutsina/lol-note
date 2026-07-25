@@ -25,7 +25,8 @@ export default function RootLayout({
     <html lang="ru">
       <body>
         <Sidebar />
-        {children}
+
+        <main className="app-content">{children}</main>
       </body>
     </html>
   );
