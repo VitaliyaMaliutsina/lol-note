@@ -24,8 +24,8 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body>
+        <div id="modal"></div>
         <Sidebar />
-
         <main className="app-content">{children}</main>
       </body>
     </html>
