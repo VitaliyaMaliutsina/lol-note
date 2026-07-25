@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "@/lib/assets/styles/tokens/colors.css";
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
+import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "lol note",
@@ -16,13 +17,19 @@ export const viewport: Viewport = {
   themeColor: "#111",
 };
 
+const appFont = Inter({
+  subsets: ["cyrillic", "latin"],
+  display: "swap",
+  variable: "--font-app",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" className={appFont.variable}>
       <body>
         <div id="modal"></div>
         <Sidebar />
