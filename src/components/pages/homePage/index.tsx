@@ -3,7 +3,7 @@ import ProfileBlock from "@/components/pages/homePage/components/profileBlock";
 import AchievementsBlock from "@/components/pages/homePage/components/achievementsBlock";
 import FavoriteBlock from "@/components/pages/homePage/components/favoritesBlock";
 import RecentBlock from "./components/recentBlock";
-import AllMatchupsBlock from "@/components/pages/homePage/components/allMatchupsBlock";
+import AllMatchupsBlock from "./components/AllMatchupsBlock/AllMatchupsBlock";
 const HomePage = () => {
   return (
     <section className={styles.container}>
