@@ -1,0 +1,26 @@
+.container {
+  max-width: 547px;
+  width: 100%;
+  background-color: #0E171D;
+  border-radius: 16px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .button {
+    padding: 5px 22px;
+    border-radius: 8px;
+  }
+}

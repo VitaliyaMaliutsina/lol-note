@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import "@/lib/assets/styles/tokens/colors.css";
+import "@/styles/tokens/colors.css";
 import "./globals.css";
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/components/Sidebar";
 import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
