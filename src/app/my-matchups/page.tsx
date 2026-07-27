@@ -1,11 +1,11 @@
-import React from 'react';
+import { Metadata } from "next";
+import MyMatchupsPage from "@/components/pages/MyMatchupsPage";
 
-const MyMatchupsPage = () => {
-    return (
-        <div>
-            My Matchups Page
-        </div>
-    );
+export const metadata: Metadata = {
+  title: "Мои матчапы",
+  description: "Просмотр моих матчапов",
 };
 
-export default MyMatchupsPage;
+export default function MyMatchups() {
+  return <MyMatchupsPage />;
+}
