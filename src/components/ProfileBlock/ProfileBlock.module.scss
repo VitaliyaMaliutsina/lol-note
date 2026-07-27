@@ -1,0 +1,52 @@
+@use "@/styles/mixins" as *;
+
+.container {
+  box-sizing: border-box;
+  padding: 30px 20px;
+  max-width: 721px;
+  width: 100%;
+  background-color: #0E171D;
+  display: grid;
+  grid-template-columns: 25% 1fr 25%;
+  column-gap: 24px;
+  border-radius: 16px;
+}
+
+.imgWrapper {
+  @include groupFlex(center)
+}
+
+.img {
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+
+/*инфо блок*/
+.infoWrapper {
+  @include groupFlex(center)
+
+}
+
+.titleName {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/*блок статистика + кнопка*/
+
+.statsWrapper {
+   @include groupFlex
+}
+
+.editButton {
+    padding: 5px 22px;
+    width: 170px;
+    background-color: #7c3aed;
+    border-radius: 8px;
+}
+
+.stats {
+
+}

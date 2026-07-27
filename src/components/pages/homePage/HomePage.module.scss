@@ -1,0 +1,21 @@
+@mixin group {
+  display: flex;
+  column-gap: 14px;
+}
+
+.container {
+  background-color: var(--color-bg-surface);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  flex-shrink: 0;
+}
+
+.firstGroup {
+  @include group
+}
+
+.secondGroup {
+  @include group
+}

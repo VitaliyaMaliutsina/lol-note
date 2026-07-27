@@ -1,9 +1,9 @@
-import HomeIcon from "@/lib/assets/icons/home.svg";
-import MatchupsIcon from "@/lib/assets/icons/matchups.svg";
-import DraftsIcon from "@/lib/assets/icons/drafts.svg";
-import FavoritesIcon from "@/lib/assets/icons/favorites.svg";
-import SettingsIcon from "@/lib/assets/icons/settings.svg";
-import HelpIcon from "@/lib/assets/icons/help.svg";
+import HomeIcon from "@/assets/icons/home.svg";
+import MatchupsIcon from "@/assets/icons/matchups.svg";
+import DraftsIcon from "@/assets/icons/drafts.svg";
+import FavoritesIcon from "@/assets/icons/favorites.svg";
+import SettingsIcon from "@/assets/icons/settings.svg";
+import HelpIcon from "@/assets/icons/help.svg";
 
 export const routes = [
   {
