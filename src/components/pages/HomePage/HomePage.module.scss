@@ -10,6 +10,10 @@
   flex-direction: column;
   row-gap: 14px;
   flex-shrink: 0;
+
+  @include below($laptop) {
+    column-gap: 15px;
+  }
 }
 
 .firstGroup {
