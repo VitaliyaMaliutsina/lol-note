@@ -4,6 +4,8 @@ import styles from "./Modal.module.scss";
 import { createPortal } from "react-dom";
 import { useEffect } from "react";
 import { clsx } from "clsx";
+import Steps from "@/components/ui/Steps/Steps";
+import { matchupsSteps } from "@/lib/constants/constants";
 
 type TProps = {
   isVisible: boolean;
@@ -58,6 +60,7 @@ const Modal = (props: TProps) => {
             </svg>
           </button>
         </div>
+        <Steps items={matchupsSteps} currentStep={3} />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
           eius maxime, mollitia nam nihil perspiciatis recusandae rerum. Facere,

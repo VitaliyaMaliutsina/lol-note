@@ -1,0 +1,56 @@
+.list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+  color: var(--color-text-secondary);
+}
+
+.listItem {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.listItem:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 20px;
+  left: 62%;
+  width: 75%;
+  height: 1px;
+  background-color: var(--color-border-secondary);
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  padding: 10px;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  background-color: var(--color-bg-surface);
+  text-align: center;
+}
+
+.stepLabel {
+  font-size: 14px;
+}
+
+.isCurrent {
+  .step {
+    color: var(--color-text-primary);
+    background-color: var(--color-action-primary);
+  }
+
+  .stepLabel {
+    color: var(--color-action-primary);
+  }
+}
