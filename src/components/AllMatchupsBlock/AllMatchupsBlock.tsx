@@ -5,6 +5,7 @@ import PreviewBlockMatchup from "@/components/PreviewBlockMatchup";
 import { matchupsData } from "@/lib/data/matchupsData";
 import React, { useState } from "react";
 import Modal from "@/components/ui/Modal";
+import Button from "@/components/ui/Button";
 
 const AllMatchupsBlock = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,13 +29,13 @@ const AllMatchupsBlock = () => {
       <article className={styles.container}>
         <div className={styles.header}>
           <div>
-            <h2 className={styles.title}>Недавние матчапы</h2>
-            <p>Ваши недавние матчапы</p>
+            <h2 className={styles.title}>Все матчапы</h2>
+            <p>История всех матчапов</p>
           </div>
 
-          <button className={styles.button} onClick={handleOpen}>
+          <Button className={styles.button} onClick={handleOpen}>
             Создать матчап
-          </button>
+          </Button>
         </div>
         <PreviewBlockMatchup data={matchupsData} />
       </article>

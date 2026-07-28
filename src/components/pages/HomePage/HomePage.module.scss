@@ -1,6 +1,10 @@
 @mixin group {
   display: flex;
   column-gap: 14px;
+  @media (max-width: 965px) {
+    row-gap: 10px;
+    column-gap: 10px;
+  }
 }
 
 .container {
@@ -10,16 +14,24 @@
   flex-direction: column;
   row-gap: 14px;
   flex-shrink: 0;
-
-  @include below($laptop) {
-    column-gap: 15px;
+  padding: 10px;
+  @media (max-width: 965px) {
+    row-gap: 10px;
   }
 }
 
 .firstGroup {
-  @include group
+  @include group;
+
+  @media (max-width: 965px) {
+    flex-direction: column;
+    row-gap: 10px;
+  }
 }
 
 .secondGroup {
-  @include group
+  @include group;
+  @media (max-width: 560px) {
+    flex-direction: column;
+  }
 }
