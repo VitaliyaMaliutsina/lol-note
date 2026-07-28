@@ -5,17 +5,18 @@ import { allStats } from "./data";
 const Stats = () => {
   return (
     <div className={styles.container}>
-      <h3 className={styles.statsTitle}>Статистика</h3>
-      <dl className={styles.stats}>
+      <div className={styles.stats}>
         {allStats.map((stat) => {
           return (
             <React.Fragment key={stat.id}>
-              <dt className={styles.title}>{stat.title}</dt>
-              <dd className={styles.value}>{stat.value}</dd>
+              <div>
+                <p className={styles.title}>{stat.title}</p>
+                <p className={styles.value}>{stat.value}</p>
+              </div>
             </React.Fragment>
           );
         })}
-      </dl>
+      </div>
     </div>
   );
 };

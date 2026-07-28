@@ -1,26 +1,9 @@
+@use "@/styles/mixins" as *;
+
 .container {
-  max-width: 721px;
-  width: 100%;
-  background-color: #0E171D;
-  padding: 30px 20px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 40px;
+  @include blockContainer(721px);
+
+  @include blockHeader;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 
-  .title {
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  .button {
-    padding: 5px 22px;
-    border-radius: 8px;
-  }
-}

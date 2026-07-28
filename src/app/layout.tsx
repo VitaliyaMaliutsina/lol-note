@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="ru" className={appFont.variable}>
       <body>
         <div id="modal"></div>
-        <Sidebar />
+        {/*<Sidebar />*/}
         <main className="app-content">{children}</main>
       </body>
     </html>
