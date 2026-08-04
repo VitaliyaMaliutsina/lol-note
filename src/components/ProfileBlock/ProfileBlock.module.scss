@@ -80,6 +80,10 @@
     }
   }
 
+  .scrollbar {
+    @include customScrollbar;
+  }
+
   .statsWrapper {
     @include groupFlex(center);
     @include below($mobile-xs) {
@@ -87,7 +91,6 @@
       grid-column: span 2;
     }
   }
-
 
 .editButton {
     position: absolute;

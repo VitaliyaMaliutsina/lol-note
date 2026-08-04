@@ -2,6 +2,7 @@ import styles from "./AchievementsBlock.module.scss";
 import Image from "next/image";
 import achievementPlaceholder from "../../../public/images/locked.png";
 import { achievements } from "./data";
+import { clsx } from "clsx";
 
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import LinkButton from "@/components/ui/LinkButton";
@@ -22,7 +23,7 @@ const AchievementsBlock = () => {
         </LinkButton>
       </div>
 
-      <div className={styles.achievementWrapper}>
+      <div className={clsx(styles.achievementWrapper, styles.scrollbar)}>
         {achievements.map((achiev) => {
           return (
             <div key={achiev.id} className={styles.achievement}>

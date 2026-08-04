@@ -5,6 +5,7 @@ import MockImg from "../../../public/images/profileAva.jpg";
 import MockImg2 from "../../../public/images/mock2.webp";
 
 import styles from "./PreviewBlockMatchup.module.scss";
+import { clsx } from "clsx";
 type TData = {
   id: string;
   playerChampion: string;
@@ -19,7 +20,7 @@ type TProps = {
 
 const PreviewBlockMatchup = ({ data }: TProps) => {
   return (
-    <div className={styles.container}>
+    <div className={clsx(styles.container, styles.scrollbar)}>
       {data.map((match) => {
         return (
           <div key={match.id} className={styles.card}>

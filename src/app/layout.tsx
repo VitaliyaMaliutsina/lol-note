@@ -3,6 +3,7 @@ import "@/styles/tokens/colors.css";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import { Inter } from "next/font/google";
+import "./styles.scss";
 
 export const metadata: Metadata = {
   title: "lol note",
@@ -33,7 +34,7 @@ export default function RootLayout({
       <body>
         <div id="modal"></div>
         <Sidebar />
-        <main className="app-content">{children}</main>
+        <main className="app-content scrollbar">{children}</main>
       </body>
     </html>
   );

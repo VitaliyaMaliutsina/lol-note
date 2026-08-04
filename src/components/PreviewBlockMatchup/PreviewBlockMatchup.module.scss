@@ -7,6 +7,10 @@
   }
 }
 
+.scrollbar {
+  @include customScrollbar(15px);
+}
+
 .card {
   display: flex;
   flex-direction: column;
