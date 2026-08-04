@@ -1,11 +1,11 @@
 "use client";
 
 import styles from "./AllMatchupsBlock.module.scss";
-import PreviewBlockMatchup from "@/components/PreviewBlockMatchup";
-import { matchupsData } from "@/lib/data/matchupsData";
+import PreviewBlockMatchup from "src/components/PreviewBlockMatchup";
+import { matchupsData } from "src/lib/data/matchupsData";
 import React, { useState } from "react";
-import Modal from "@/components/ui/Modal";
-import Button from "@/components/ui/Button";
+import Modal from "src/components/ui/Modal";
+import Button from "src/components/ui/Button";
 
 const AllMatchupsBlock = () => {
   const [isOpen, setIsOpen] = useState(false);

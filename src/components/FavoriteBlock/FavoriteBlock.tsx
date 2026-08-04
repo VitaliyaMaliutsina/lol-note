@@ -1,6 +1,6 @@
 import styles from "./FavoriteBlock.module.scss";
-import PreviewBlockMatchup from "@/components/PreviewBlockMatchup";
-import { matchupsData } from "@/lib/data/matchupsData";
+import PreviewBlockMatchup from "src/components/PreviewBlockMatchup";
+import { matchupsData } from "src/lib/data/matchupsData";
 
 const FavoriteBlock = () => {
   return (
