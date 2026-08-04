@@ -1,14 +1,13 @@
 import styles from "./Button.module.scss";
 import { ButtonHTMLAttributes } from "react";
 import { clsx } from "clsx";
-
-type TButtonVariants = "primary" | "secondary" | "outline";
+import { TButtonVariant } from "@/lib/types/types";
 
 type TButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: TButtonVariants;
+  variant?: TButtonVariant;
 };
 
-const getButtonClassName = (variant: TButtonVariants, className?: string) => {
+const getButtonClassName = (variant: TButtonVariant, className?: string) => {
   return clsx(styles.button, styles[variant], className);
 };
 
