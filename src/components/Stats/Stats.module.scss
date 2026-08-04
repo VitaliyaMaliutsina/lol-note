@@ -10,7 +10,7 @@
   padding: 15px;
   background-color: #454545;
   border-radius: 16px;
-  @media (max-width: 560px) {
+  @include below($mobile-xs) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -20,7 +20,7 @@
 
   .title {
     font-size: 14px;
-    @media (max-width: 560px) {
+    @include below($mobile-xs) {
       font-size: 16px;
     }
   }
@@ -28,7 +28,7 @@
   .value {
     font-size: 18px;
     margin-bottom: 10px;
-    @media (max-width: 560px) {
+    @include below($mobile-xs) {
       margin-top: 10px;
       text-align: center;
       font-size: 20px;
