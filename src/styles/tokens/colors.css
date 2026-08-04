@@ -29,6 +29,7 @@
   /*semantic*/
   --color-bg-page: var(--blue-800);
   --color-bg-surface: var(--blue-700);
+  --color-bg-blocks: var(--blue-600);
 
   --color-action-primary: var(--purple-500);
   --color-action-secondary: var(--blue-700);

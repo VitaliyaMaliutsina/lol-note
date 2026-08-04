@@ -1,14 +1,11 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-}
-
 .statsTitle {}
 
 .stats {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
   padding: 15px;
-  background-color: #454545;
+  background-color: var(--color-bg-blocks);
   border-radius: 16px;
   @include below($mobile-xs) {
     display: flex;
@@ -27,6 +24,8 @@
 
   .value {
     font-size: 18px;
+    font-weight: bold;
+    @media (max-width: 560px) {
     margin-bottom: 10px;
     @include below($mobile-xs) {
       margin-top: 10px;
@@ -35,7 +34,9 @@
     }
   }
 
-  p:last-child {
-    margin-bottom: 0;
+  .statsItem:first-child {
+    .value {
+      color: var(--color-success);
+    }
   }
 }

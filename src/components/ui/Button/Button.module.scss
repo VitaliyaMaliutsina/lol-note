@@ -53,3 +53,14 @@
     background-color: var(--color-action-primary);
   }
 }
+
+.ghost {
+  padding: 3px;
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-text-secondary);
+
+  &:hover {
+    color: var(--color-action-primary);
+  }
+}

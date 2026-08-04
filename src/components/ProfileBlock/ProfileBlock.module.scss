@@ -4,7 +4,8 @@
   padding: 20px 20px;
   max-width: 721px;
   width: 100%;
-  background-color: #0E171D;
+  background-color: var(--color-bg-page);
+  background-image: var(--gradient-profile);
   border-radius: 16px;
   display: grid;
   grid-auto-flow: column;
@@ -90,8 +91,7 @@
 
 .editButton {
     position: absolute;
-    background-color: transparent;
-    border-radius: 8px;
+    padding: 0;
     right: 1%;
     top: 2%;
 

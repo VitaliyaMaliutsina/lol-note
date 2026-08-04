@@ -2,7 +2,7 @@ import styles from "./Button.module.scss";
 import { ButtonHTMLAttributes } from "react";
 import { clsx } from "clsx";
 
-type TButtonVariants = "primary" | "secondary" | "outline";
+type TButtonVariants = "primary" | "secondary" | "outline" | "ghost";
 
 type TButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: TButtonVariants;
