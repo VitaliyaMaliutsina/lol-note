@@ -86,4 +86,13 @@
     var(--blue-700) 0%,
     var(--blue-750) 100%
   );
+
+  /*пока что без переменных, чтоб подобрать цвет*/
+  --gradient-bg: linear-gradient(
+    to right,
+    #111a2f 0%,
+    var(--color-bg-page) 20%,
+    var(--color-bg-page) 80%,
+    rgb(64 10 73 / 0.74) 100%
+  );
 }
