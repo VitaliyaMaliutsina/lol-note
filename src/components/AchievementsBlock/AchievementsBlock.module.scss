@@ -58,3 +58,7 @@
     }
   }
 }
+
+.scrollbar {
+  @include customScrollbar(15px);
+}

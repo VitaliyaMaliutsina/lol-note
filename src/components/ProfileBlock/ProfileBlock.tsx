@@ -5,6 +5,7 @@ import Image from "next/image";
 import React from "react";
 import Stats from "@/components/Stats";
 import Button from "@/components/ui/Button";
+import { clsx } from "clsx";
 
 const ProfileBlock = () => {
   const editProfile = () => {
@@ -53,7 +54,7 @@ const ProfileBlock = () => {
 
       <div className={styles.infoWrapper}>
         <h1 className={styles.titleName}>Катюха Гашишева</h1>
-        <p className={styles.description}>
+        <p className={clsx(styles.description, styles.scrollbar)}>
           Люблю анализировать матчапы и побеждать. Создаю заметки по всем линиям
           и делюсь опытом. Lorem ipsum dolor sit amet, consectetur adipisicing
           elit. Alias aliquid animi aperiam aspernatur cumque deleniti dolorem

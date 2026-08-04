@@ -79,6 +79,10 @@
     }
   }
 
+  .scrollbar {
+    @include customScrollbar;
+  }
+
   .statsWrapper {
     @include groupFlex(center);
     @media (max-width: 560px) {
@@ -86,7 +90,6 @@
       grid-column: span 2;
     }
   }
-
 
 .editButton {
     position: absolute;
