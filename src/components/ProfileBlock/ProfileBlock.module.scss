@@ -4,7 +4,8 @@
   padding: 20px 20px;
   max-width: 721px;
   width: 100%;
-  background-color: #0E171D;
+  background-color: var(--color-bg-page);
+  background-image: var(--gradient-profile);
   border-radius: 16px;
   display: grid;
   grid-auto-flow: column;
@@ -12,18 +13,18 @@
   column-gap: 24px;
   flex: 1 0 60%;
 
-  @media (max-width: 1280px) {
+  @include below($laptop-xs) {
     padding: 20px 12px;
     column-gap: 15px;
   }
 
-  @media (max-width: 965px) {
+  @include below($laptop-breakpoint-big) {
     max-width: 100%;
     padding: 25px 20px;
     column-gap: 20px;
   }
 
-  @media (max-width: 560px) {
+  @include below($mobile-xs) {
    grid-auto-flow: row;
    grid-template-columns: 30% 1fr;
    grid-template-rows: 1fr 1fr;
@@ -40,17 +41,17 @@
       height: 130px;
       border-radius: 50%;
 
-      @media (max-width: 1280px) {
+      @include below($laptop-xs) {
         width: 100px;
         height: 100px;
       }
 
-      @media (max-width: 965px) {
+      @include below($laptop-breakpoint-big) {
         width: 130px;
         height: 130px;
       }
 
-      @media (max-width: 965px) {
+      @include below($laptop-breakpoint-big) {
         width: 100px;
         height: 100px;
       }
@@ -62,10 +63,10 @@
     .titleName {
       font-size: 25px;
       font-weight: 600;
-      @media (max-width: 1280px) {
+      @include below($laptop-xs) {
         font-size: 22px;
       }
-      @media (max-width: 965px) {
+      @include below($laptop-breakpoint-big) {
        font-size: 20px;
       }
     }
@@ -74,7 +75,7 @@
   .description {
     max-height: 100px;
     overflow-y: scroll;
-    @media (max-width: 1280px) {
+    @include below($laptop-xs) {
       font-size: 14px;
     }
   }
@@ -85,7 +86,7 @@
 
   .statsWrapper {
     @include groupFlex(center);
-    @media (max-width: 560px) {
+    @include below($mobile-xs) {
       grid-row: 2;
       grid-column: span 2;
     }
@@ -93,12 +94,11 @@
 
 .editButton {
     position: absolute;
-    background-color: transparent;
-    border-radius: 8px;
+    padding: 0;
     right: 1%;
     top: 2%;
 
-  @media (max-width: 965px) {
+  @include below($laptop-breakpoint-big) {
     right: 0;
     top: 2%;
   }

@@ -2,17 +2,16 @@ import styles from "./LinkButton.module.scss";
 import { clsx } from "clsx";
 import Link, { LinkProps } from "next/link";
 import { ReactNode } from "react";
-
-type TLinkButtonVariants = "primary" | "secondary" | "outline" | "ghost";
+import { TButtonVariant } from "@/lib/types/types";
 
 type TLinkButtonProps = LinkProps & {
-  variant?: TLinkButtonVariants;
+  variant?: TButtonVariant;
   className?: string;
   children?: ReactNode;
 };
 
 const getLinkButtonClassName = (
-  variant: TLinkButtonVariants,
+  variant: TButtonVariant,
   className?: string,
 ) => {
   return clsx(styles.linkButton, styles[variant], className);

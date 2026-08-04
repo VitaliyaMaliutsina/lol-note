@@ -1,5 +1,8 @@
 .container {
-  @include blockContainer(721px);
+  @include blockContainer(100%);
+
+  background-color: var(--color-bg-page);
+  background-image: var(--gradient-favorites);
 
   @include blockHeader;
 }
