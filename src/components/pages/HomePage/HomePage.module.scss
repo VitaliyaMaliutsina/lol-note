@@ -1,21 +1,20 @@
 @mixin group {
   display: flex;
   column-gap: 14px;
-  @media (max-width: 965px) {
+  @include below($laptop-breakpoint-big) {
     row-gap: 10px;
     column-gap: 10px;
   }
 }
 
 .container {
-  background-color: var(--color-bg-surface);
   width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 14px;
   flex-shrink: 0;
   padding: 10px;
-  @media (max-width: 965px) {
+  @include below($laptop-breakpoint-big) {
     row-gap: 10px;
   }
 }
@@ -23,7 +22,7 @@
 .firstGroup {
   @include group;
 
-  @media (max-width: 965px) {
+  @include below($laptop-breakpoint-big) {
     flex-direction: column;
     row-gap: 10px;
   }
@@ -31,7 +30,7 @@
 
 .secondGroup {
   @include group;
-  @media (max-width: 560px) {
+  @include below ($mobile-xs) {
     flex-direction: column;
   }
 }
