@@ -3,7 +3,7 @@
 
   @include blockHeader;
 
-  @media (max-width: 965px) {
+  @include below ($laptop-breakpoint-big) {
     max-width: 100%;
   }
 }
@@ -31,7 +31,7 @@
       border-radius: 16px;
       object-fit: cover;
 
-      @media (max-width: 1200px) {
+      @include below($laptop-xs) {
         height: 100px;
         width: 110px;
       }
@@ -42,7 +42,7 @@
       font-weight: 600;
       text-align: center;
 
-      @media (max-width: 1200px) {
+      @include below($laptop-xs)  {
         font-size: 14px;
       }
 
@@ -51,7 +51,7 @@
       font-size: 14px;
       text-align: center;
 
-      @media (max-width: 1200px) {
+      @include below($laptop-xs)  {
         font-size: 12px;
         font-weight: 200;
       }
