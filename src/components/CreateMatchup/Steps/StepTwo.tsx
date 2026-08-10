@@ -40,15 +40,16 @@ const StepTwo = ({ champions, setForm, form }: TProps) => {
 
   return (
     <div>
-      шаг 2
-      <div onClick={() => setTarget("player")}>
-        <ChampionImg src={getChampionUrl(form, "player")} alt={""} />
-        <p>player</p>
-      </div>
-      vs
-      <div onClick={() => setTarget("enemy")}>
-        <ChampionImg src={getChampionUrl(form, "enemy")} alt={""} />
-        <p>enemy</p>
+      <div className={styles.playersWrapper}>
+        <div onClick={() => setTarget("player")}>
+          <ChampionImg src={getChampionUrl(form, "player")} alt={""} />
+          <p>player</p>
+        </div>
+        vs
+        <div onClick={() => setTarget("enemy")}>
+          <ChampionImg src={getChampionUrl(form, "enemy")} alt={""} />
+          <p>enemy</p>
+        </div>
       </div>
       <div className={styles.championContainer}>
         {champions.map((champion) => {

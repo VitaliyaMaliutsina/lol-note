@@ -10,7 +10,6 @@ type TProps = {
 const StepThree = ({ setForm }: TProps) => {
   return (
     <div>
-      шаг 3
       <textarea
         placeholder={"Введите вашу заметку"}
         onChange={(event) =>

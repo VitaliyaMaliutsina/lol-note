@@ -72,12 +72,14 @@ const CreateMatchup = ({ champions }: TProps) => {
   return (
     <div>
       {currentStepType}
-      <Button onClick={handleClickBack}>Назад</Button>
-      {step === "3" ? (
-        <Button onClick={handleButtonClick}>Создать</Button>
-      ) : (
-        <Button onClick={handleClickCurrentStep}>Далее</Button>
-      )}
+      <div className={styles.buttonWrapper}>
+        <Button onClick={handleClickBack}>Назад</Button>
+        {step === "3" ? (
+          <Button onClick={handleButtonClick}>Создать</Button>
+        ) : (
+          <Button onClick={handleClickCurrentStep}>Далее</Button>
+        )}
+      </div>
     </div>
   );
 };
