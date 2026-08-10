@@ -1,8 +1,5 @@
 .buttonWrapper {
   display: flex;
-  column-gap: 15px;
-
-  .button {
-    padding: 5px;
-  }
+  flex-direction: row;
+  justify-content: space-between;
 }

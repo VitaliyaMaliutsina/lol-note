@@ -5,3 +5,10 @@
   max-height: 350px;
   overflow: auto;
 }
+
+.playersWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
