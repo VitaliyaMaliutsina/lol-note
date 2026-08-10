@@ -1,1 +1,8 @@
+.buttonWrapper {
+  display: flex;
+  column-gap: 15px;
 
+  .button {
+    padding: 5px;
+  }
+}

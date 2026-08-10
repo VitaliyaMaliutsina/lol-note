@@ -7,8 +7,14 @@ import PreviewBlockMatchup from "@/components/PreviewBlockMatchup";
 import Modal from "@/components/ui/Modal";
 import Button from "@/components/ui/Button";
 import SearchInput from "@/components/ui/SearchInput";
+import CreateMatchup from "@/components/CreateMatchup";
+import { IFormatedChampion } from "@/lib/types/types";
 
-const AllMatchupsBlock = () => {
+type TProps = {
+  champions: IFormatedChampion[];
+};
+
+const AllMatchupsBlock = ({ champions }: TProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [search, setSearch] = useState("");
@@ -18,8 +24,6 @@ const AllMatchupsBlock = () => {
       setIsVisible(true);
     });
   };
-
-  console.log(search);
 
   const handleClose = () => {
     setIsVisible(false);
@@ -49,7 +53,11 @@ const AllMatchupsBlock = () => {
         </div>
         <PreviewBlockMatchup data={matchupsData} />
       </article>
-      {isOpen && <Modal onClose={handleClose} isVisible={isVisible} />}
+      {isOpen && (
+        <Modal onClose={handleClose} isVisible={isVisible}>
+          <CreateMatchup champions={champions} />
+        </Modal>
+      )}
     </>
   );
 };
