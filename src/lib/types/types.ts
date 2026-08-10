@@ -60,3 +60,10 @@ export interface IChampion {
     attackspeed: number;
   };
 }
+
+export type TMatchup = {
+  playerChampion: IFormatedChampion[];
+  enemyChampion: IFormatedChampion[];
+  role: string;
+  note: string;
+};

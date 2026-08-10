@@ -4,7 +4,13 @@ import AchievementsBlock from "@/components/AchievementsBlock";
 import FavoriteBlock from "@/components/FavoriteBlock";
 import RecentBlock from "@/components/RecentBlock";
 import AllMatchupsBlock from "@/components/AllMatchupsBlock";
-const HomePage = () => {
+import { IFormatedChampion } from "@/lib/types/types";
+
+type TProps = {
+  champions: IFormatedChampion[];
+};
+
+const HomePage = ({ champions }: TProps) => {
   return (
     <section className={styles.container}>
       <div className={styles.firstGroup}>
@@ -17,7 +23,7 @@ const HomePage = () => {
         <FavoriteBlock />
       </div>
 
-      <AllMatchupsBlock />
+      <AllMatchupsBlock champions={champions} />
     </section>
   );
 };

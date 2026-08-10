@@ -2,7 +2,7 @@
 
 import styles from "./Modal.module.scss";
 import { createPortal } from "react-dom";
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { clsx } from "clsx";
 import Steps from "@/components/ui/Steps/Steps";
 import { matchupsSteps } from "@/lib/constants/constants";
@@ -10,10 +10,11 @@ import { matchupsSteps } from "@/lib/constants/constants";
 type TProps = {
   isVisible: boolean;
   onClose: () => void;
+  children: ReactNode;
 };
 
 const Modal = (props: TProps) => {
-  const { onClose, isVisible } = props;
+  const { onClose, isVisible, children } = props;
 
   useEffect(() => {
     const handleEsc = (e: { key: string }) => {
@@ -61,26 +62,7 @@ const Modal = (props: TProps) => {
           </button>
         </div>
         <Steps items={matchupsSteps} currentStep={3} />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
-          eius maxime, mollitia nam nihil perspiciatis recusandae rerum. Facere,
-          ipsa optio.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
-          blanditiis debitis eveniet impedit in ipsa praesentium. A deserunt
-          enim error incidunt laboriosam sapiente veniam vitae!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
-          blanditiis debitis eveniet impedit in ipsa praesentium. A deserunt
-          enim error incidunt laboriosam sapiente veniam vitae!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
-          blanditiis debitis eveniet impedit in ipsa praesentium. A deserunt
-          enim error incidunt laboriosam sapiente veniam vitae!
-        </p>
+        {children}
       </div>
     </div>,
     container,
