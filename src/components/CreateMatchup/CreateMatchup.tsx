@@ -7,8 +7,7 @@ import StepTwo from "@/components/CreateMatchup/Steps/StepTwo";
 import StepThree from "@/components/CreateMatchup/Steps/StepThree";
 import Button from "@/components/ui/Button";
 import { IFormatedChampion, TMatchup } from "@/lib/types/types";
-import LinkButton from "@/components/ui/LinkButton";
-import { useRouter } from "next/navigation";
+import { createMatchupAction } from "@/app/actions";
 
 type TProps = {
   champions: IFormatedChampion[];
@@ -17,7 +16,6 @@ type TProps = {
 type TSteps = "1" | "2" | "3";
 
 const CreateMatchup = ({ champions }: TProps) => {
-  const router = useRouter();
   const [step, setStep] = useState<TSteps>("1");
   const [form, setForm] = useState<TMatchup>({
     role: "",
@@ -25,8 +23,6 @@ const CreateMatchup = ({ champions }: TProps) => {
     enemyChampion: [],
     note: "",
   });
-
-  console.log(form);
 
   const currentStepType =
     step === "1" ? (
@@ -53,20 +49,13 @@ const CreateMatchup = ({ champions }: TProps) => {
     }
   };
 
-  const createMatchup = () => {
-    const matchUrl = `${form.playerChampion.map((champion) => champion.name).join("-")}vs${form.enemyChampion.map((champion) => champion.name).join("-")}`;
-
-    const match = {
-      url: matchUrl,
-      ...form,
-    };
-
-    router.push(`/my-matchups/${matchUrl}`);
+  const createMatchup = async () => {
+    await createMatchupAction(form);
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClick = async () => {
     handleClickCurrentStep();
-    createMatchup();
+    await createMatchup();
   };
 
   return (

@@ -62,8 +62,29 @@ export interface IChampion {
 }
 
 export type TMatchup = {
+  id?: number;
   playerChampion: IFormatedChampion[];
   enemyChampion: IFormatedChampion[];
   role: string;
   note: string;
 };
+
+export interface IUserProfiles {
+  created_at: string;
+  user_achievement: string;
+  user_avatar: string;
+  user_description: string;
+  user_id: string;
+  user_name: string;
+  user_rank: string;
+}
+
+export interface IUserNoteResponse {
+  id: number;
+  user_id: string;
+  created_at: string;
+  note: string;
+  player_champions: IFormatedChampion | IFormatedChampion[];
+  enemy_champions: IFormatedChampion | IFormatedChampion[];
+  role: string;
+}

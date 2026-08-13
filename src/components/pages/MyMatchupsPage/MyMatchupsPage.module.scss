@@ -1,3 +1,12 @@
 .container {
   background-image: var(--gradient-surface);
 }
+
+.matchup {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  color: white;
+  background-color: #2a3a55;
+  margin-bottom: 15px;
+}
