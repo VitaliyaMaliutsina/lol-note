@@ -7,8 +7,13 @@ import Stats from "@/components/Stats";
 import Button from "@/components/ui/Button";
 import { clsx } from "clsx";
 import EditProfileIcon from "@/assets/icons/edit-profile.svg";
+import { IFormatedChampion, IUserProfiles } from "@/lib/types/types";
 
-const ProfileBlock = () => {
+type TProps = {
+  profiles: IUserProfiles;
+};
+
+const ProfileBlock = ({ profiles }: TProps) => {
   const editProfile = () => {
     console.log("edit");
   };
@@ -33,15 +38,11 @@ const ProfileBlock = () => {
       </div>
 
       <div className={styles.infoWrapper}>
-        <h1 className={styles.titleName}>Катюха Гашишева</h1>
+        <h1 className={styles.titleName}>
+          {profiles.user_name ?? "Катюха Гашишева"}
+        </h1>
         <p className={clsx(styles.description, styles.scrollbar)}>
-          Люблю анализировать матчапы и побеждать. Создаю заметки по всем линиям
-          и делюсь опытом. Lorem ipsum dolor sit amet, consectetur adipisicing
-          elit. Alias aliquid animi aperiam aspernatur cumque deleniti dolorem
-          eius enim explicabo facilis fuga harum iure maiores nesciunt nulla
-          numquam officiis repellendus, vero vitae voluptas? Aspernatur
-          assumenda consequuntur corporis, deleniti, doloribus eius ipsum modi
-          molestias nemo non officia recusandae rem suscipit, vitae voluptatem.
+          {profiles.user_description}
         </p>
       </div>
 

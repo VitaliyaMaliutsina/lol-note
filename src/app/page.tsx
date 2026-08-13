@@ -2,6 +2,7 @@ import HomePage from "@/components/pages/HomePage";
 import { Metadata } from "next";
 import { getChampionsApi } from "@/lib/api/champion";
 import { formatResChampions } from "@/lib/helpers/formatChampions";
+import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
   title: "Домашняя страница",
@@ -14,5 +15,17 @@ export default async function Home() {
   const res = await getChampionsApi();
   const champions = formatResChampions(res);
 
-  return <HomePage champions={champions} />;
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  const { data: profile, error: profileError } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("user_id", user?.id)
+    .single();
+
+  return <HomePage champions={champions} profiles={profile} />;
 }
