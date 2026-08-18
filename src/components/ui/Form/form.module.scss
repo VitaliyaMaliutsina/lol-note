@@ -1,0 +1,15 @@
+.form {
+  background-color: #8e8e8e;
+  display: flex;
+  flex-direction: column;
+  max-width: 35%;
+  row-gap: 15px;
+
+  .btnWrapper {
+    display: flex;
+    column-gap: 15px;
+    button {
+      padding: 5px;
+    }
+  }
+}

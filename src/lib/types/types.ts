@@ -9,6 +9,16 @@ export interface IFormatedChampion {
   };
 }
 
+export interface IFormatedProfile {
+  createdAt: string;
+  userAchievement: string;
+  userAvatar: string;
+  userDescription: string;
+  userId: string;
+  userName: string;
+  userRank: string;
+}
+
 export interface IChampionsResponse {
   data: IChampion[];
 }

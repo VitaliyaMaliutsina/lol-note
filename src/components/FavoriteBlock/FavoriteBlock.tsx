@@ -5,7 +5,11 @@ import LinkButton from "@/components/ui/LinkButton";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import React from "react";
 
-const FavoriteBlock = () => {
+type TProps = {
+  isAuth: boolean;
+};
+
+const FavoriteBlock = ({ isAuth }: TProps) => {
   return (
     <article className={styles.container}>
       <div className={styles.header}>
@@ -18,7 +22,11 @@ const FavoriteBlock = () => {
           <ArrowUpRightIcon />
         </LinkButton>
       </div>
-      <PreviewBlockMatchup data={matchupsData} />
+      {isAuth ? (
+        <PreviewBlockMatchup data={matchupsData} />
+      ) : (
+        "Зайдите или зарегистрируйтесь"
+      )}
     </article>
   );
 };

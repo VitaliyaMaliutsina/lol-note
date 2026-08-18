@@ -2,18 +2,18 @@
 import styles from "./ProfileBlock.module.scss";
 import SummonerImg from "../../../public/images/profileAva.jpg";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Stats from "@/components/Stats";
 import Button from "@/components/ui/Button";
 import { clsx } from "clsx";
 import EditProfileIcon from "@/assets/icons/edit-profile.svg";
-import { IFormatedChampion, IUserProfiles } from "@/lib/types/types";
+import { IFormatedProfile } from "@/lib/types/types";
 
 type TProps = {
-  profiles: IUserProfiles;
+  profile: IFormatedProfile;
 };
 
-const ProfileBlock = ({ profiles }: TProps) => {
+const ProfileBlock = ({ profile }: TProps) => {
   const editProfile = () => {
     console.log("edit");
   };
@@ -38,11 +38,9 @@ const ProfileBlock = ({ profiles }: TProps) => {
       </div>
 
       <div className={styles.infoWrapper}>
-        <h1 className={styles.titleName}>
-          {profiles.user_name ?? "Катюха Гашишева"}
-        </h1>
+        <h1 className={styles.titleName}>{profile.userName}</h1>
         <p className={clsx(styles.description, styles.scrollbar)}>
-          {profiles.user_description}
+          {profile.userDescription}
         </p>
       </div>
 

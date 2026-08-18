@@ -4,7 +4,13 @@ import PreviewBlockMatchup from "@/components/PreviewBlockMatchup";
 import { matchupsData } from "@/lib/data/matchupsData";
 import LinkButton from "@/components/ui/LinkButton";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-const RecentBlock = () => {
+import { IFormatedChampion } from "@/lib/types/types";
+
+type TProps = {
+  isAuth: boolean;
+};
+
+const RecentBlock = ({ isAuth }: TProps) => {
   return (
     <article className={styles.container}>
       <div className={styles.header}>
@@ -17,7 +23,11 @@ const RecentBlock = () => {
           <ArrowUpRightIcon />
         </LinkButton>
       </div>
-      <PreviewBlockMatchup data={matchupsData} />
+      {isAuth ? (
+        <PreviewBlockMatchup data={matchupsData} />
+      ) : (
+        "Зайдите или зарегистрируйтесь"
+      )}
     </article>
   );
 };
