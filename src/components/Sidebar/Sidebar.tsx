@@ -6,6 +6,7 @@ import { routes } from "@/lib/constants/routes";
 import LinkButton from "@/components/ui/LinkButton";
 import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
+import UserControl from "@/components/UserControl";
 
 const Sidebar = () => {
   const pathName = usePathname();
@@ -82,7 +83,10 @@ const Sidebar = () => {
 
       <div className={styles.holder}>
         <nav className={styles.desktop}>
-          <ul className={styles.list}>{renderRoutes(topElements)}</ul>
+          <ul className={styles.list}>
+            <UserControl />
+            {renderRoutes(topElements)}
+          </ul>
 
           <ul className={clsx(styles.list)}>{renderRoutes(bottomElements)}</ul>
         </nav>

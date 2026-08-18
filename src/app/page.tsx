@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import { getChampionsApi } from "@/lib/api/champion";
 import { formatResChampions } from "@/lib/helpers/formatChampions";
 import { createClient } from "@/lib/supabase/server";
+import { requireAuth } from "@/lib/helpers/requireAuth";
+import { formatUserProfile } from "@/lib/helpers/formatUserProfile";
 
 export const metadata: Metadata = {
   title: "Домашняя страница",
@@ -14,7 +16,7 @@ export const revalidate = 86400;
 export default async function Home() {
   const res = await getChampionsApi();
   const champions = formatResChampions(res);
-
+  // const userAuth = await requireAuth();
   const supabase = await createClient();
 
   const {
@@ -27,5 +29,13 @@ export default async function Home() {
     .eq("user_id", user?.id)
     .single();
 
-  return <HomePage champions={champions} profiles={profile} />;
+  console.log("user", user);
+
+  return (
+    <HomePage
+      champions={champions}
+      profile={formatUserProfile(profile)}
+      isAuth={user ? true : false}
+    />
+  );
 }
