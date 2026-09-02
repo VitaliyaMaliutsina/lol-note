@@ -4,6 +4,8 @@ import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import { Inter } from "next/font/google";
 import "./styles.scss";
+import { requireAuth } from "@/lib/helpers/requireAuth";
+import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
   title: "lol note",
@@ -33,7 +35,7 @@ export default function RootLayout({
     <html lang="ru" className={appFont.variable}>
       <body>
         <div id="modal"></div>
-        <Sidebar />
+        <Sidebar isAuth={true} />
         <main className="app-content scrollbar">{children}</main>
       </body>
     </html>

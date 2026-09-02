@@ -8,7 +8,11 @@ import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 import UserControl from "@/components/UserControl";
 
-const Sidebar = () => {
+type TProps = {
+  isAuth: boolean;
+};
+
+const Sidebar = ({ isAuth }: TProps) => {
   const pathName = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
