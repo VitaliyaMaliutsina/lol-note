@@ -2,7 +2,7 @@
 import styles from "./ProfileBlock.module.scss";
 import SummonerImg from "../../../public/images/profileAva.jpg";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import Stats from "@/components/Stats";
 import Button from "@/components/ui/Button";
 import { clsx } from "clsx";
@@ -11,22 +11,26 @@ import { IFormatedProfile } from "@/lib/types/types";
 
 type TProps = {
   profile: IFormatedProfile;
+  isAuth: boolean;
 };
 
-const ProfileBlock = ({ profile }: TProps) => {
+const ProfileBlock = ({ profile, isAuth }: TProps) => {
   const editProfile = () => {
     console.log("edit");
   };
 
   return (
     <article className={styles.container}>
-      <Button
-        variant="icon"
-        className={styles.editButton}
-        onClick={editProfile}
-      >
-        <EditProfileIcon />
-      </Button>
+      {isAuth && (
+        <Button
+          variant="icon"
+          className={styles.editButton}
+          onClick={editProfile}
+        >
+          <EditProfileIcon />
+        </Button>
+      )}
+
       <div className={styles.imgWrapper}>
         <Image
           src={SummonerImg}

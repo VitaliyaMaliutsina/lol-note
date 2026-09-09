@@ -4,7 +4,6 @@ import PreviewBlockMatchup from "@/components/PreviewBlockMatchup";
 import { matchupsData } from "@/lib/data/matchupsData";
 import LinkButton from "@/components/ui/LinkButton";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import { IFormatedChampion } from "@/lib/types/types";
 
 type TProps = {
   isAuth: boolean;
@@ -19,14 +18,18 @@ const RecentBlock = ({ isAuth }: TProps) => {
           <p className={styles.description}>Ваши недавние матчапы</p>
         </div>
 
-        <LinkButton href="/" variant="icon" className={styles.button}>
+        <LinkButton
+          href="/my-matchups"
+          variant="icon"
+          className={styles.button}
+        >
           <ArrowUpRightIcon />
         </LinkButton>
       </div>
       {isAuth ? (
         <PreviewBlockMatchup data={matchupsData} />
       ) : (
-        "Зайдите или зарегистрируйтесь"
+        <p>Войдите или зарегестрируйтесь, чтоб просматривать эту информацию</p>
       )}
     </article>
   );

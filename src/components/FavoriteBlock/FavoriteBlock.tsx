@@ -18,14 +18,14 @@ const FavoriteBlock = ({ isAuth }: TProps) => {
           <p className={styles.description}>Ваши любимые матчапы</p>
         </div>
 
-        <LinkButton href="/" variant="icon" className={styles.button}>
+        <LinkButton href="/favorites" variant="icon" className={styles.button}>
           <ArrowUpRightIcon />
         </LinkButton>
       </div>
       {isAuth ? (
         <PreviewBlockMatchup data={matchupsData} />
       ) : (
-        "Зайдите или зарегистрируйтесь"
+        <p>Войдите или зарегестрируйтесь, чтоб просматривать эту информацию</p>
       )}
     </article>
   );

@@ -4,11 +4,7 @@ import AchievementsBlock from "@/components/AchievementsBlock";
 import FavoriteBlock from "@/components/FavoriteBlock";
 import RecentBlock from "@/components/RecentBlock";
 import AllMatchupsBlock from "@/components/AllMatchupsBlock";
-import {
-  IFormatedChampion,
-  IFormatedProfile,
-  IUserProfiles,
-} from "@/lib/types/types";
+import { IFormatedChampion, IFormatedProfile } from "@/lib/types/types";
 
 type TProps = {
   champions: IFormatedChampion[];
@@ -20,7 +16,7 @@ const HomePage = ({ champions, profile, isAuth }: TProps) => {
   return (
     <section className={styles.container}>
       <div className={styles.firstGroup}>
-        <ProfileBlock profile={profile} />
+        <ProfileBlock profile={profile} isAuth={isAuth} />
         <AchievementsBlock isAuth={isAuth} />
       </div>
 

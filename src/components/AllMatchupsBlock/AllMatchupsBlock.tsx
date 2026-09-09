@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./AllMatchupsBlock.module.scss";
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import { matchupsData } from "@/lib/data/matchupsData";
 import PreviewBlockMatchup from "@/components/PreviewBlockMatchup";
 import Modal from "@/components/ui/Modal";
@@ -9,7 +9,7 @@ import Button from "@/components/ui/Button";
 import SearchInput from "@/components/ui/SearchInput";
 import CreateMatchup from "@/components/CreateMatchup";
 import { IFormatedChampion } from "@/lib/types/types";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 type TProps = {
   champions: IFormatedChampion[];
@@ -21,6 +21,8 @@ const AllMatchupsBlock = ({ champions, isAuth }: TProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [search, setSearch] = useState("");
 
+  const router = useRouter();
+
   const handleOpen = () => {
     if (isAuth) {
       setIsOpen(true);
@@ -28,7 +30,7 @@ const AllMatchupsBlock = ({ champions, isAuth }: TProps) => {
         setIsVisible(true);
       });
     } else {
-      redirect("/login");
+      router.push("/login");
     }
   };
 
@@ -61,7 +63,9 @@ const AllMatchupsBlock = ({ champions, isAuth }: TProps) => {
         {isAuth ? (
           <PreviewBlockMatchup data={matchupsData} />
         ) : (
-          "Зайдите или зарегистрируйтесь"
+          <p>
+            Войдите или зарегестрируйтесь, чтоб просматривать эту информацию
+          </p>
         )}
       </article>
       {isOpen && (

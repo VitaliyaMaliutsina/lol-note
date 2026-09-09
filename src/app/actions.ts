@@ -34,3 +34,9 @@ export const createMatchupAction = async (formData: TMatchup) => {
     redirect(`/my-matchups/${newRow?.id}`);
   }
 };
+
+export const logoutAction = async () => {
+  const supabase = await createClient();
+
+  await supabase.auth.signOut();
+};

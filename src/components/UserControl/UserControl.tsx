@@ -1,12 +1,22 @@
 import React from "react";
-import Button from "@/components/ui/Button";
 import LinkButton from "@/components/ui/LinkButton";
-import { requireAuth } from "@/lib/helpers/requireAuth";
+import { logoutAction } from "@/app/actions";
+import Button from "@/components/ui/Button";
 
-const UserControl = async () => {
-  // const isAuth = await requireAuth();
+type TProps = {
+  isAuth: boolean;
+};
 
-  return <LinkButton href={"/login"}>Войти</LinkButton>;
+const UserControl = ({ isAuth }: TProps) => {
+  return (
+    <>
+      {isAuth ? (
+        <Button onClick={() => logoutAction()}>Выйти</Button>
+      ) : (
+        <LinkButton href={"/login"}>Войти</LinkButton>
+      )}
+    </>
+  );
 };
 
 export default UserControl;
