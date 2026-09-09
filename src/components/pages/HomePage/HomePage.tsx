@@ -1,18 +1,23 @@
 import styles from "./HomePage.module.scss";
-import ProfileBlock from "@/components/ProfileBlock";
-import AchievementsBlock from "@/components/AchievementsBlock";
-import FavoriteBlock from "@/components/FavoriteBlock";
-import RecentBlock from "@/components/RecentBlock";
-import AllMatchupsBlock from "@/components/AllMatchupsBlock";
-import { IFormatedChampion, IFormatedProfile } from "@/lib/types/types";
+import ProfileBlock from "../../HomeComponents/ProfileBlock";
+import AchievementsBlock from "../../HomeComponents/AchievementsBlock";
+import FavoriteBlock from "../../HomeComponents/FavoriteBlock";
+import RecentBlock from "../../HomeComponents/RecentBlock";
+import AllMatchupsBlock from "../../HomeComponents/AllMatchupsBlock";
+import {
+  IFormatedChampion,
+  IFormatedProfile,
+  TMatchup,
+} from "@/lib/types/types";
 
 type TProps = {
   champions: IFormatedChampion[];
   profile: IFormatedProfile;
   isAuth: boolean;
+  userNotes: TMatchup[];
 };
 
-const HomePage = ({ champions, profile, isAuth }: TProps) => {
+const HomePage = ({ champions, profile, isAuth, userNotes }: TProps) => {
   return (
     <section className={styles.container}>
       <div className={styles.firstGroup}>
@@ -25,7 +30,11 @@ const HomePage = ({ champions, profile, isAuth }: TProps) => {
         <FavoriteBlock isAuth={isAuth} />
       </div>
 
-      <AllMatchupsBlock champions={champions} isAuth={isAuth} />
+      <AllMatchupsBlock
+        champions={champions}
+        isAuth={isAuth}
+        userNotes={userNotes}
+      />
     </section>
   );
 };

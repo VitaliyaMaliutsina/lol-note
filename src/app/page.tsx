@@ -4,6 +4,7 @@ import { getChampionsApi } from "@/lib/api/champion";
 import { formatResChampions } from "@/lib/helpers/formatChampions";
 import { createClient } from "@/lib/supabase/server";
 import { formatUserProfile } from "@/lib/helpers/formatUserProfile";
+import { formatUserNotes } from "@/lib/helpers/formatUserNotes";
 
 export const metadata: Metadata = {
   title: "Домашняя страница",
@@ -27,18 +28,19 @@ export default async function Home() {
     .eq("user_id", user?.id)
     .single();
 
-  const { data: usersNote, error: noteError } = await supabase
+  const { data: notes, error: userNotesError } = await supabase
     .from("users_note")
     .select("*")
     .eq("user_id", user?.id)
-    .single();
+    .order("created_at", { ascending: false });
 
   const isAuth = user ? true : false;
-
+  console.log(notes);
   return (
     <HomePage
       champions={champions}
       profile={formatUserProfile(profile)}
+      userNotes={formatUserNotes(notes)}
       isAuth={isAuth}
     />
   );

@@ -1,13 +1,13 @@
 "use client";
 import styles from "./ProfileBlock.module.scss";
-import SummonerImg from "../../../public/images/profileAva.jpg";
+import SummonerImg from "../../../../public/images/profileAva.jpg";
 import Image from "next/image";
 import React from "react";
-import Stats from "@/components/Stats";
-import Button from "@/components/ui/Button";
 import { clsx } from "clsx";
-import EditProfileIcon from "@/assets/icons/edit-profile.svg";
+import EditProfileIcon from "../../../assets/icons/edit-profile.svg";
+import Button from "@/components/ui/Button";
 import { IFormatedProfile } from "@/lib/types/types";
+import Stats from "@/components/Stats";
 
 type TProps = {
   profile: IFormatedProfile;

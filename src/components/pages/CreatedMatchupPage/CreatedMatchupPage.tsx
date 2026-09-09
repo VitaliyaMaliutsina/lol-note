@@ -1,36 +1,29 @@
+import styles from "./CreatedMatchupPage.module.scss";
 import React from "react";
-import { IFormatedChampion, TMatchup } from "@/lib/types/types";
-import ChampionImg from "@/components/ui/ChampionImg/ChampionImg";
+import { TMatchup } from "@/lib/types/types";
+import { getPlayer } from "@/lib/utils/getPlayer";
+import Link from "next/link";
 
 type TProps = {
   userNote?: TMatchup;
 };
 
-const getPlayer = (data: IFormatedChampion[]) => {
-  console.log(data);
-  return data.map((el) => {
-    return (
-      <div key={el.id}>
-        <ChampionImg src={el.image.full} alt={el.name} />
-        {el.name}
-      </div>
-    );
-  });
-};
-
 const CreatedMatchupPage = ({ userNote }: TProps) => {
   return (
-    <div>
-      созданый матчап
+    <section className={styles.section}>
+      <Link href={"/my-matchups"}> {"<-"}Все матчапы</Link>
       {userNote && (
-        <div>
-          {userNote.note}
-          {getPlayer(userNote.playerChampion)}
-          VS
-          {getPlayer(userNote.enemyChampion)}
-        </div>
+        <>
+          <div className={styles.userChampion}>
+            {getPlayer(userNote.playerChampion)}
+            VS
+            {getPlayer(userNote.enemyChampion)}
+          </div>
+          <h2>Заметка:</h2>
+          <p>{userNote.note}</p>
+        </>
       )}
-    </div>
+    </section>
   );
 };
 

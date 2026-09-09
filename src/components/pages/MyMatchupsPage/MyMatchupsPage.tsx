@@ -1,22 +1,11 @@
 import styles from "./MyMatchupsPage.module.scss";
-import { IFormatedChampion, TMatchup } from "@/lib/types/types";
-import ChampionImg from "@/components/ui/ChampionImg/ChampionImg";
+import { TMatchup } from "@/lib/types/types";
 import React from "react";
 import Link from "next/link";
+import { getPlayer } from "@/lib/utils/getPlayer";
 
 type TProps = {
   userNotes?: TMatchup[];
-};
-
-const getPlayer = (data: IFormatedChampion[]) => {
-  return data.map((el) => {
-    return (
-      <div key={el.id}>
-        <ChampionImg src={el.image.full} alt={el.name} />
-        {el.name}
-      </div>
-    );
-  });
 };
 
 const MyMatchupsPage = ({ userNotes }: TProps) => {

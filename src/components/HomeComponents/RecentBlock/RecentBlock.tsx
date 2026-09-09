@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./RecentBlock.module.scss";
-import PreviewBlockMatchup from "@/components/PreviewBlockMatchup";
-import { matchupsData } from "@/lib/data/matchupsData";
+import ArrowUpRightIcon from "../../../assets/icons/arrow-up-right.svg";
+
 import LinkButton from "@/components/ui/LinkButton";
-import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
+import { BlurCards } from "@/components/BlurComponents/BlurCards/BlurCards";
 
 type TProps = {
   isAuth: boolean;
@@ -27,9 +27,16 @@ const RecentBlock = ({ isAuth }: TProps) => {
         </LinkButton>
       </div>
       {isAuth ? (
-        <PreviewBlockMatchup data={matchupsData} />
+        <div className={styles.temporarilyBlock}>
+          <BlurCards>Этот раздел пока недоступен.</BlurCards>
+        </div>
       ) : (
-        <p>Войдите или зарегестрируйтесь, чтоб просматривать эту информацию</p>
+        <div className={styles.blurContainer}>
+          {/*<PreviewBlockMatchup data={matchupsData} />*/}
+          <BlurCards>
+            Войдите или зарегестрируйтесь, чтоб просматривать эту информацию
+          </BlurCards>
+        </div>
       )}
     </article>
   );

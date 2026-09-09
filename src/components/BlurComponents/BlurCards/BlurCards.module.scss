@@ -1,0 +1,11 @@
+.blur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

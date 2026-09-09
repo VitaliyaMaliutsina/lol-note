@@ -6,3 +6,8 @@
 
   @include blockHeader;
 }
+
+
+.temporarilyBlock {
+  @include blockHeight;
+}
