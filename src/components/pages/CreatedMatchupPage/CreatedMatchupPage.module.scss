@@ -1,0 +1,17 @@
+.section {
+  height: 100%;
+}
+
+.userChampion {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 25px;
+
+  img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+  }
+}

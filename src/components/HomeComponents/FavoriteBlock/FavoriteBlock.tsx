@@ -1,9 +1,8 @@
 import styles from "./FavoriteBlock.module.scss";
-import PreviewBlockMatchup from "@/components/PreviewBlockMatchup";
-import { matchupsData } from "@/lib/data/matchupsData";
-import LinkButton from "@/components/ui/LinkButton";
-import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
+import ArrowUpRightIcon from "../../../assets/icons/arrow-up-right.svg";
 import React from "react";
+import LinkButton from "@/components/ui/LinkButton";
+import { BlurCards } from "@/components/BlurComponents/BlurCards/BlurCards";
 
 type TProps = {
   isAuth: boolean;
@@ -23,9 +22,13 @@ const FavoriteBlock = ({ isAuth }: TProps) => {
         </LinkButton>
       </div>
       {isAuth ? (
-        <PreviewBlockMatchup data={matchupsData} />
+        <BlurCards>Этот раздел пока недоступен.</BlurCards>
       ) : (
-        <p>Войдите или зарегестрируйтесь, чтоб просматривать эту информацию</p>
+        <div className={styles.blurContainer}>
+          <BlurCards>
+            Войдите или зарегестрируйтесь, чтоб просматривать эту информацию
+          </BlurCards>
+        </div>
       )}
     </article>
   );
