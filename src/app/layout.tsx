@@ -4,7 +4,6 @@ import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import { Inter } from "next/font/google";
 import "./styles.scss";
-import { requireAuth } from "@/lib/helpers/requireAuth";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
@@ -26,16 +25,28 @@ const appFont = Inter({
   variable: "--font-app",
 });
 
-export default function RootLayout({
+const isAuthUser = async (): Promise<boolean> => {
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  return user ? true : false;
+};
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isAuth = await isAuthUser();
+
   return (
     <html lang="ru" className={appFont.variable}>
       <body>
         <div id="modal"></div>
-        <Sidebar isAuth={true} />
+        <Sidebar isAuth={isAuth} />
         <main className="app-content scrollbar">{children}</main>
       </body>
     </html>

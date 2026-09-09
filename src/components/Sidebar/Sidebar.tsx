@@ -88,7 +88,7 @@ const Sidebar = ({ isAuth }: TProps) => {
       <div className={styles.holder}>
         <nav className={styles.desktop}>
           <ul className={styles.list}>
-            <UserControl />
+            <UserControl isAuth={isAuth} />
             {renderRoutes(topElements)}
           </ul>
 

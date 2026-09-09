@@ -6,7 +6,7 @@ import { clsx } from "clsx";
 
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import LinkButton from "@/components/ui/LinkButton";
-import { IFormatedChampion } from "@/lib/types/types";
+import React from "react";
 
 type TProps = {
   isAuth: boolean;
@@ -28,25 +28,27 @@ const AchievementsBlock = ({ isAuth }: TProps) => {
         </LinkButton>
       </div>
 
-      <div className={clsx(styles.achievementWrapper, styles.scrollbar)}>
-        {isAuth
-          ? achievements.map((achiev) => {
-              return (
-                <div key={achiev.id} className={styles.achievement}>
-                  <Image
-                    className={styles.img}
-                    src={achievementPlaceholder}
-                    alt={""}
-                    width={400}
-                    height={400}
-                  />
-                  <p className={styles.title}>{achiev.title}</p>
-                  <p className={styles.description}>{achiev.description}</p>
-                </div>
-              );
-            })
-          : "Зайдите или зарегистрируйтесь"}
-      </div>
+      {isAuth ? (
+        <div className={clsx(styles.achievementWrapper, styles.scrollbar)}>
+          {achievements.map((achiev) => {
+            return (
+              <div key={achiev.id} className={styles.achievement}>
+                <Image
+                  className={styles.img}
+                  src={achievementPlaceholder}
+                  alt={""}
+                  width={400}
+                  height={400}
+                />
+                <p className={styles.title}>{achiev.title}</p>
+                <p className={styles.description}>{achiev.description}</p>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <p>Войдите или зарегестрируйтесь, чтоб просматривать эту информацию</p>
+      )}
     </article>
   );
 };
